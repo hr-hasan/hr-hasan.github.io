@@ -9,6 +9,12 @@
 
 <body>
     <p>Hello everybody.</p>
+    <p>Its <span id="time"></span> pm</p>
+    <script>
+        const time = document.getElementById('time');
+        var currentTime = new Date();
+        time.innerText = currentTime.toUTCString();
+    </script>
 </body>
 
 </html>
