@@ -1,0 +1,176 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 1rem;
+  font-family: "Montserrat", sans-serif;
+}
+a {
+  text-decoration: none;
+}
+
+#hero {
+  display: block;
+  background-image: url(../src/img/hero-bg.png);
+  background-size: cover;
+  background-position: top center;
+  position: relative;
+  z-index: 1;
+}
+#hero::after {
+  content: "";
+  position: absolute;
+  background-color: black;
+  top: 0px;
+  bottom: 0px;
+  height: 100%;
+  width: 100%;
+  opacity: 0.75;
+  z-index: -1;
+}
+.container {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
+}
+
+/* Hero Section  */
+.hero {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 50px;
+}
+.hero h1 {
+  color: transparent;
+  font-size: 4rem;
+  width: fit-content;
+  display: block;
+  position: relative;
+  animation: hero_text_reveal 1s ease-in forwards;
+}
+.hero h1:nth-child(1) {
+  animation-delay: 1.2s;
+}
+.hero h1:nth-child(2) {
+  animation-delay: 2.2s;
+}
+.hero h1:nth-child(3) {
+  animation: hero_text_reveal_name 0.5s ease-in forwards;
+  animation-delay: 3.3s;
+}
+
+.hero h1::after {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 0%;
+  height: 100%;
+  background-color: crimson;
+  animation: hero_text_reveal_box 1s ease-in;
+}
+.hero h1:nth-child(1)::after {
+  animation-delay: 1s;
+}
+.hero h1:nth-child(2)::after {
+  animation-delay: 2s;
+}
+.hero h1:nth-child(3)::after {
+  animation-delay: 3s;
+}
+
+.hero a {
+  display: inline-block;
+  color: crimson;
+  background: transparent;
+  font-size: 1rem;
+  width: fit-content;
+  border: 2px solid crimson;
+  border-radius: 5%;
+  text-transform: uppercase;
+  padding: 8px 15px;
+  margin-top: 12px;
+  transition: 0.4s ease-in;
+}
+.hero a:hover {
+  color: white;
+  background-color: crimson;
+}
+/* End of Hero Section */
+
+/* Service Section */
+#services .service {
+  text-align: center;
+  padding: 80px 0;
+  margin: 0 auto;
+  max-width: 1500px;
+  height: fit-content;
+}
+
+#services .service-title {
+  font-size: 4rem;
+  font-weight: 100;
+  color: rgb(77, 73, 73);
+  margin-bottom: 0.8rem;
+}
+#services .service-title span {
+  color: crimson;
+}
+#services p.service-details {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 1rem;
+  line-height: 2rem;
+  font-weight: 100;
+  letter-spacing: 0.15rem;
+  margin-bottom: 25px;
+}
+#services .service-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+#services .service-body div {
+  max-width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin: 30px auto;
+  background-image: url(../src/img/img-1.png);
+  background-size: cover;
+  padding: 2rem 1rem;
+  border-radius: 10px;
+}
+
+/* End of Service Section */
+
+/* Animation Keyframes */
+@keyframes hero_text_reveal_box {
+  50% {
+    width: 100%;
+    left: 0;
+  }
+  100% {
+    width: 0;
+    left: 100%;
+  }
+}
+@keyframes hero_text_reveal {
+  100% {
+    color: white;
+  }
+}
+@keyframes hero_text_reveal_name {
+  100% {
+    color: crimson;
+  }
+}
+/* End of Animation Keyframes */
